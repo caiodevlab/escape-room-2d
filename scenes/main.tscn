@@ -3,18 +3,37 @@
 [ext_resource type="Script" uid="uid://2m0fwhwspk7i" path="res://scripts/player.gd" id="1_o5qli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnbqk"]
-size = Vector2(66, 58)
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycqdr"]
+size = Vector2(800, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxtg8"]
+size = Vector2(800, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txp35"]
+size = Vector2(280, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64vo1"]
+size = Vector2(160, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5y43"]
+size = Vector2(500, 30)
 
 [node name="Main" type="Node2D" unique_id=1799122144]
 
+[node name="Background" type="ColorRect" parent="." unique_id=2018649727]
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.14566407, 0.3769294, 0.12784266, 1)
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=481218350]
+position = Vector2(400, 300)
 script = ExtResource("1_o5qli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=350908650]
 position = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_jnbqk")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=339720032]
 
 [node name="ColorRect" type="ColorRect" parent="Player" unique_id=57355586]
 offset_left = -20.0
@@ -22,3 +41,47 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 color = Color(0.011764706, 0.05882353, 1, 1)
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=1522580728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=960544509]
+position = Vector2(400, 20)
+shape = SubResource("RectangleShape2D_ycqdr")
+
+[node name="WallBotton" type="StaticBody2D" parent="WallTop" unique_id=1185822935]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop/WallBotton" unique_id=239453576]
+position = Vector2(400, 580)
+shape = SubResource("RectangleShape2D_rxtg8")
+
+[node name="WallLeft" type="StaticBody2D" parent="WallTop" unique_id=436316145]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop/WallLeft" unique_id=2015009889]
+position = Vector2(140, 180)
+shape = SubResource("RectangleShape2D_txp35")
+
+[node name="WallRight" type="StaticBody2D" parent="WallTop" unique_id=82559099]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop/WallRight" unique_id=1709478955]
+position = Vector2(720, 180)
+shape = SubResource("RectangleShape2D_64vo1")
+
+[node name="ColorRect" type="ColorRect" parent="WallTop" unique_id=656693687]
+offset_left = -400.0
+offset_top = -20.0
+offset_right = 400.0
+offset_bottom = 20.0
+color = Color(0.93285584, 0.5295312, 0.43487123, 1)
+
+[node name="WallMath" type="StaticBody2D" parent="." unique_id=94373158]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallMath" unique_id=121702456]
+position = Vector2(250, 180)
+shape = SubResource("RectangleShape2D_p5y43")
+
+[node name="Label" type="Label" parent="." unique_id=44716965]
+offset_left = 250.0
+offset_top = 80.0
+offset_right = 421.0
+offset_bottom = 103.0
+text = "SALA DE MATEMÁTICA"
