@@ -5,7 +5,45 @@ Jogo 2D desenvolvido em **Godot** para um projeto escolar.
 O jogador assume o papel de um aluno preso dentro da escola e precisa explorar o ambiente, encontrar pistas, resolver desafios relacionados a conteúdos escolares e desbloquear o caminho até a saída.
 
 O objetivo principal é entregar um jogo **funcional, simples e apresentável**, priorizando gameplay e conclusão do projeto em vez de complexidade técnica ou gráficos avançados.
+## Conceito final do jogo
 
+O jogo será um Escape Room 2D ambientado dentro de uma escola, com visual simples e atmosfera de suspense leve. O jogador acorda trancado em uma sala e descobre que a escola foi fechada por um motivo misterioso. Para escapar, ele precisará explorar os corredores, salas e ambientes da instituição, coletar pistas, resolver enigmas baseados em matérias escolares e encontrar a forma de abrir a porta de saída.
+
+O foco do jogo está em uma progressão clara, divertida e educativa: cada área apresenta um desafio diferente, e a solução de cada um desbloqueia o caminho para a próxima etapa. A mecânica principal é explorar, descobrir, interagir e usar as informações encontradas para avançar.
+
+### Objetivo principal
+
+Escapar da escola antes que o tempo acabe ou antes que a situação piore. Para isso, o jogador deve:
+
+- explorar o mapa;
+- encontrar pistas e itens;
+- resolver desafios e perguntas escolares;
+- desbloquear portas, salas e corredores;
+- alcançar a saída final.
+
+### Início
+
+O jogo começa em uma sala de aula vazia, com a porta de saída aparentemente trancada e algumas pistas iniciais espalhadas pelo ambiente. O jogador aprende os controles básicos e recebe a primeira missão: investigar o local, procurar informações e entender como a escola está organizada.
+
+Neste momento, a narrativa é discreta e a sensação de confinamento ajuda a criar o clima de escape room. O primeiro desafio introduz o jogador ao tipo de puzzle que será encontrado ao longo do jogo.
+
+### Meio
+
+No desenvolvimento do jogo, o jogador avança por diferentes ambientes da escola, como corredor, biblioteca, laboratório, sala de informática ou direção. Em cada local, ele encontra novas pistas e precisa solucionar enigmas que podem exigir:
+
+- responder perguntas de matemática, português, ciências e história;
+- localizar combinações ou códigos;
+- encontrar chaves ou itens necessários;
+- usar objetos do cenário corretamente;
+- interpretar pistas visuais e textuais.
+
+É nessa etapa que a progressão principal acontece. O jogador começa a entender a lógica do jogo e percebe que cada solução abre uma nova etapa, aproximando-o da saída.
+
+### Final
+
+Ao resolver os últimos desafios, o jogador reúne os itens e códigos necessários para abrir a porta principal da escola. A saída final é o momento de conclusão do jogo, em que o jogador confirma a fuga e encerra a experiência com uma sensação de vitória e resolução.
+
+A conclusão pode ser reforçada por uma tela de vitória, mensagem final ou pequena animação de encerramento, mantendo a proposta simples e eficaz do projeto.
 ---
 
 ## 1. Visão geral
