@@ -130,7 +130,125 @@ Finalizar jogo
 
 ---
 
-# 4. Mecânicas principais
+# 4. Fluxo do jogo
+
+A progressão do jogo deve seguir uma sequência lógica, com cada sala introduzindo uma nova pista e um novo desafio. O objetivo é manter o jogador sempre avançando, sem travar em puzzles sem contexto.
+
+## 4.1 Mapa e sequência de salas
+
+```text
+Sala de aula inicial
+   ↓
+Descobrir pista do armário
+   ↓
+Armário / corredor
+   ↓
+Encontrar chave do laboratório
+   ↓
+Laboratório
+   ↓
+Resolver enigma ou pergunta escolar
+   ↓
+Obter código da biblioteca
+   ↓
+Biblioteca
+   ↓
+Encontrar pista da sala da direção
+   ↓
+Sala da direção / informática
+   ↓
+Resolver último desafio
+   ↓
+Desbloquear porta da saída
+   ↓
+VITÓRIA
+```
+
+## 4.2 Sequência de pistas e desafios
+
+### 1. Sala de aula inicial
+
+- O jogador começa preso dentro da sala.
+- A primeira pista está no quadro, em cadernos ou em um aviso do professor.
+- Essa pista indica onde está o armário ou o primeiro item essencial.
+- Desafio inicial: descobrir uma combinação simples ou identificar um objeto escondido.
+
+### 2. Armário / corredor
+
+- O jogador encontra uma chave, um bilhete ou um código.
+- A informação leva ao laboratório.
+- Esse trecho serve para introduzir a lógica do jogo: procurar, observar e interagir.
+
+### 3. Laboratório
+
+- O ambiente apresenta um enigma com pergunta escolar ou combinação.
+- Exemplo: resolver uma conta, responder uma questão de ciências ou localizar um símbolo correto.
+- A solução revela um código ou item que abre a próxima área.
+
+### 4. Biblioteca
+
+- O jogador precisa procurar um livro, diário ou sinalização que contenha a próxima pista.
+- Essa área ajuda a reforçar o tema educacional do jogo.
+- Pode incluir uma pergunta de português, história ou geografia.
+
+### 5. Sala da direção / informática
+
+- O jogador recebe a informação final necessária para abrir a saída.
+- O desafio pode envolver a combinação correta de código, senha ou sequência de objetos.
+- Essa etapa representa o ponto mais importante da progressão.
+
+### 6. Saída
+
+- Ao inserir o código ou usar o item correto, a porta abre.
+- A tela final pode mostrar uma mensagem de vitória e encerrar a experiência.
+
+## 4.3 Lógica da progressão
+
+Cada área deve ter:
+
+- uma pista clara;
+- um objetivo específico;
+- uma recompensa imediata;
+- conexão direta com a próxima etapa.
+
+A sequência precisa ser simples de seguir, para que o jogador entenda onde ir e o que precisa fazer sem ficar perdido. O importante é que cada desafio resolvido resulte em uma abertura, uma chave, uma senha ou uma nova direção.
+
+## 4.4 Esboço do mapa da escola
+
+O mapa pode ser uma escola pequena e organizada, com corredores e salas conectadas em um layout simples e jogável.
+
+```text
++-----------------------------------------------------------+
+|                       CORREDOR CENTRAL                    |
+|  [Sala de aula] -- [Corredor] -- [Armário] -- [Laboratório] |
+|       |                               |                  |
+|       |                               |                  |
+|  [Biblioteca] ---------------------- [Sala da direção]   |
+|                               |                           |
+|                         [Porta da saída]                  |
++-----------------------------------------------------------+
+```
+
+### Estrutura funcional
+
+- Sala de aula inicial: ponto de partida, primeira pista e introdução ao jogo.
+- Armário: contém objeto ou chave inicial.
+- Corredor central: liga as áreas e guia o jogador para os próximos desafios.
+- Laboratório: local do primeiro enigma mais técnico.
+- Biblioteca: área de pesquisa e pistas textuais.
+- Sala da direção / informática: última etapa antes da saída.
+- Porta da saída: objetivo final do jogo.
+
+### Observações de nível
+
+- O mapa deve ser pequeno o suficiente para ser percorrido rapidamente.
+- Os corredores devem funcionar como caminhos de conexão e não como área sem objetivo.
+- Cada sala deve ter pelo menos um ponto visual de destaque, como mesa, quadro, armário, livro ou computador.
+- A porta final precisa ser visível ou claramente indicada antes do último desafio.
+
+---
+
+# 5. Mecânicas principais
 
 ## 4.1 Movimento
 
