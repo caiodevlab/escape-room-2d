@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://f84gnweyl3lc"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_o5qli"]
-[ext_resource type="Script" path="res://scripts/interactable.gd" id="2_interactable"]
+[ext_resource type="Script" path="res://scripts/item_pickup.gd" id="2_item_pickup"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="3_door"]
+[ext_resource type="Script" path="res://scripts/puzzle.gd" id="4_puzzle"]
+[ext_resource type="Script" path="res://scripts/answer_panel.gd" id="5_answer_panel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(32, 48)
@@ -147,6 +150,40 @@ offset_right = 660.0
 offset_bottom = 575.0
 text = "Abrir armário (E)"
 
+[node name="AnswerPanel" type="ColorRect" parent="."]
+visible = false
+offset_left = 230.0
+offset_top = 180.0
+offset_right = 730.0
+offset_bottom = 420.0
+color = Color(0.1, 0.1, 0.12, 0.95)
+script = ExtResource("5_answer_panel")
+
+[node name="QuestionLabel" type="Label" parent="AnswerPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 470.0
+offset_bottom = 120.0
+text = "Pergunta"
+autowrap_mode = 3
+
+[node name="AnswerInput" type="LineEdit" parent="AnswerPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 140.0
+offset_right = 470.0
+offset_bottom = 180.0
+placeholder_text = "Digite sua resposta"
+
+[node name="SubmitButton" type="Button" parent="AnswerPanel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 210.0
+offset_right = 320.0
+offset_bottom = 250.0
+text = "Responder"
+
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(110, 120)
 script = ExtResource("1_o5qli")
@@ -162,16 +199,17 @@ offset_bottom = 24.0
 color = Color(0.11, 0.43, 1, 1)
 
 [node name="InteractionArea" type="Area2D" parent="Player"]
-monitorable = false
+monitorable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/InteractionArea"]
 shape = SubResource("CircleShape2D_interaction")
 
 [node name="ObjectLocker" type="Area2D" parent="."]
 position = Vector2(820, 170)
-script = ExtResource("2_interactable")
-prompt = "Abrir armário"
-message = "Você encontrou a chave do laboratório!"
+script = ExtResource("2_item_pickup")
+item_id = "lab_key"
+item_name = "Chave do laboratório"
+prompt = "Pegar chave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectLocker"]
 shape = SubResource("RectangleShape2D_object")
@@ -183,21 +221,61 @@ offset_right = 30.0
 offset_bottom = 30.0
 color = Color(0.86, 0.7, 0.36, 1)
 
-[node name="ObjectBook" type="Area2D" parent="."]
-position = Vector2(420, 420)
-script = ExtResource("2_interactable")
-prompt = "Ler livro"
-message = "Você descobriu a pista da direção!"
+[node name="DoorLab" type="Area2D" parent="."]
+position = Vector2(610, 160)
+script = ExtResource("3_door")
+required_item = "lab_key"
+lock_message = "A porta do laboratório está trancada."
+unlock_message = "Porta do laboratório destrancada."
+prompt = "Abrir porta"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBook"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLab"]
 shape = SubResource("RectangleShape2D_object")
 
-[node name="ColorRect" type="ColorRect" parent="ObjectBook"]
+[node name="ColorRect" type="ColorRect" parent="DoorLab"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.78, 0.24, 0.24, 1)
+
+[node name="PuzzleDesk" type="Area2D" parent="."]
+position = Vector2(420, 420)
+script = ExtResource("4_puzzle")
+question = "Qual é o resultado de 7 + 5?"
+expected_answer = "12"
+reward_item = "library_code"
+reward_name = "Código da biblioteca"
+success_message = "Resposta correta! Você pegou o código da biblioteca."
+prompt = "Resolver enigma"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleDesk"]
+shape = SubResource("RectangleShape2D_object")
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleDesk"]
 offset_left = -30.0
 offset_top = -30.0
 offset_right = 30.0
 offset_bottom = 30.0
 color = Color(0.7, 0.52, 1, 1)
+
+[node name="DoorExit" type="Area2D" parent="."]
+position = Vector2(480, 550)
+script = ExtResource("3_door")
+required_item = "library_code"
+lock_message = "A saída está trancada. Você precisa do código da biblioteca."
+unlock_message = "A saída foi aberta!"
+prompt = "Sair da escola"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorExit"]
+shape = SubResource("RectangleShape2D_object")
+
+[node name="ColorRect" type="ColorRect" parent="DoorExit"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.88, 0.84, 0.38, 1)
 
 [node name="WallTop" type="StaticBody2D" parent="."]
 
