@@ -12,7 +12,7 @@ var is_active: bool = true
 func get_prompt() -> String:
 	return prompt
 
-func interact() -> void:
+func interact(_player: Node = null) -> void:
 	if not is_active:
 		return
 
