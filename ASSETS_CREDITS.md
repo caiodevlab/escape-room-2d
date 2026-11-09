@@ -1,16 +1,13 @@
-# Créditos e Licenças de Assets — Escape Room 2D
+# Créditos e Licenças de Assets — Escape Room 2D (Escola)
 
-Este documento lista todos os recursos externos utilizados no projeto **Escape Room 2D (Escola)**, bem como suas respectivas fontes e licenças sob padrão CC0 / domínio público ou licenças abertas compatíveis com projetos educacionais e comerciais independentes.
+Este documento lista todos os recursos visuais gerados e utilizados no projeto **Escape Room 2D (Escola)**, sob licença CC0 / Domínio Público.
 
-## 1. Sprites e Tilesets
-- **Estilo Visual:** Design autoral estilizado para pixel art escolar e interfaces retrô.
-- **Fontes de Inspiração:** Kenney.nl (CC0 1.0 Universal) / OpenGameArt.org.
-
-## 2. Áudio e Efeitos Sonoros
-- **Efeitos de Interação e UI:** Sintetizados ou obtidos via FreeSound.org sob licença CC0 / Domínio Público.
-
-## 3. Fontes Tipográficas
-- **Fonte Padrão do Sistema / Godot Theme:** Open Font License (OFL).
+## Sprites e Texturas Criadas (Embutidos no projeto)
+1. `res://assets/sprites/school_floor.png` — Textura de piso escolar (Pixel art autoral, CC0).
+2. `res://assets/sprites/school_wall.png` — Textura de parede de tijolos (Pixel art autoral, CC0).
+3. `res://assets/sprites/player_sprite.png` — Sprite do personagem estudantil (Pixel art autoral, CC0).
+4. `res://assets/sprites/school_desk.png` — Textura de mobiliário/mesa escolar (Pixel art autoral, CC0).
+5. `res://assets/sprites/school_door.png` — Textura de porta de madeira com maçaneta (Pixel art autoral, CC0).
 
 ---
-*Todos os assets embutidos ou referenciados cumprem as exigências de licença aberta para uso educacional e apresentação escolar.*
+*Todos os arquivos acima existem fisicamente no diretório `assets/sprites/` e são referenciados no projeto.*
